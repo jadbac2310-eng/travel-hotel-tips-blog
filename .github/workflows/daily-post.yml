@@ -1,0 +1,43 @@
+name: Daily Travel Post
+
+on:
+  schedule:
+    # 毎日 日本時間 6:00（UTC 21:00）に実行
+    - cron: "0 21 * * *"
+  workflow_dispatch: # 手動実行も可能にする
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node generate.js
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posts assets index.html used_topics.json sitemap.xml robots.txt
+          if git diff --cached --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            git commit -m "Add daily travel post ($(TZ=Asia/Tokyo date +%Y-%m-%d))"
+            git push
+          fi
