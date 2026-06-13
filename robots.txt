@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jadbac2310-eng.github.io/travel-hotel-tips-blog/sitemap.xml
