@@ -206,13 +206,9 @@ a:hover {
   text-decoration: none;
 }
 
-/* ===== ブログ本文 ===== */
+/* ===== ブログ本文（枠なし・全幅） ===== */
 .post {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 28px 28px 8px;
+  padding: 4px 0 0;
 }
 .post-lead {
   font-size: 1.08rem;
@@ -238,14 +234,11 @@ a:hover {
   margin: 0 0 14px;
 }
 
-/* ===== まとめ ===== */
+/* ===== まとめ（枠なし・上区切り線） ===== */
 .summary {
-  margin: 32px 0;
-  padding: 24px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  margin: 28px 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid var(--border);
 }
 .summary::before {
   content: "まとめ";
@@ -339,13 +332,7 @@ a:hover {
   }
   /* スマホでは余白を詰めて本文の横幅を広く使う */
   .container {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  .post {
-    padding: 20px 16px 4px;
-  }
-  .summary {
-    padding: 18px 16px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 }
