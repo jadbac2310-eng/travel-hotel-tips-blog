@@ -429,15 +429,24 @@ function saveArticleHtml(html, date) {
 }
 
 // ---- 5. index.html の更新 ----
-function indexLabel(article, date) {
+function shortDate(date) {
   const [, m, d] = date.split("-");
-  const md = `${Number(m)}/${Number(d)}`;
-  return `${md} ${article.title}`;
+  return `${Number(m)}/${Number(d)}`;
 }
 
 function updateIndex(article, date) {
-  const label = indexLabel(article, date);
-  const link = `<li><a href="posts/${date}.html">${escapeHtml(label)}</a></li>`;
+  // サムネ画像付きのカードとして追加
+  const link = `<li class="post-card">
+        <a href="posts/${date}.html">
+          <img class="post-thumb" src="assets/images/${date}.png" alt="${escapeHtml(
+    article.title
+  )}" loading="lazy" />
+          <div class="post-card-body">
+            <span class="post-card-date">${escapeHtml(shortDate(date))}</span>
+            <span class="post-card-title">${escapeHtml(article.title)}</span>
+          </div>
+        </a>
+      </li>`;
 
   let html = fs.readFileSync(INDEX_PATH, "utf-8");
   if (html.includes(`posts/${date}.html`)) {
