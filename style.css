@@ -167,73 +167,36 @@ a:hover {
   text-decoration: none;
 }
 
-/* ===== お役立ち情報カード ===== */
-.tips {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.tip-card {
-  position: relative;
-  display: flex;
-  gap: 18px;
+/* ===== ブログ本文 ===== */
+.post {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px;
   box-shadow: var(--shadow);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  padding: 28px 28px 8px;
 }
-.tip-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(36, 52, 71, 0.14);
+.post-lead {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--border);
 }
-.tip-number {
-  flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #fff;
-  background: linear-gradient(135deg, var(--teal), var(--sky));
+.post-section {
+  margin: 0 0 24px;
 }
-.tip-body {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-/* 1番目のカードに表示するトピック画像 */
-.tip-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 320px;
-  object-fit: cover;
-  margin: 0 0 16px;
-  border-radius: 12px;
-}
-.tip-heading {
-  margin: 0 0 8px;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-.tip-text {
+.section-heading {
   margin: 0 0 12px;
-}
-.tip-point {
-  margin: 0;
-  padding: 12px 14px;
-  background: rgba(14, 165, 165, 0.08);
-  border-left: 3px solid var(--teal);
-  border-radius: 8px;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-}
-.tip-point strong {
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--teal-dark);
+  padding-left: 14px;
+  border-left: 5px solid var(--teal);
+  line-height: 1.5;
+}
+.post-section p {
+  margin: 0 0 14px;
 }
 
 /* ===== まとめ ===== */
