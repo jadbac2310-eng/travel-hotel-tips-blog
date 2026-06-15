@@ -300,37 +300,21 @@ function buildJsonLd(article, date, pageUrl, imageUrl, description) {
   return JSON.stringify(graph, null, 2).replace(/</g, "\\u003c");
 }
 
-// 自社アプリの紹介カード（1番目と2番目の間に表示）
+// 自社アプリのシンプルなバナー（画像＋ストアバッジのみ。記事の邪魔をしない）
 function buildPromoCard() {
-  const points = PROMO_BANNER.points
-    .map((p) => `            <li>${escapeHtml(p)}</li>`)
-    .join("\n");
   return `
-      <aside class="promo-card" aria-label="広告：${escapeHtml(PROMO_BANNER.title)}">
+      <aside class="promo-simple" aria-label="広告：${escapeHtml(PROMO_BANNER.title)}">
         <span class="promo-tag">PR</span>
         <img class="promo-image" src="${PROMO_BANNER.image}" alt="${escapeHtml(
     PROMO_BANNER.alt
   )}" loading="lazy" />
-        <div class="promo-body">
-          <h2 class="promo-title">${escapeHtml(PROMO_BANNER.title)}</h2>
-          <div class="promo-meta">
-            <span class="tag">${escapeHtml(PROMO_BANNER.platform)}</span>
-            <span class="tag">${escapeHtml(PROMO_BANNER.genre)}</span>
-          </div>
-          <p class="promo-description">${escapeHtml(PROMO_BANNER.description)}</p>
-          <p class="promo-points-title">おすすめポイント</p>
-          <ul class="promo-points">
-${points}
-          </ul>
-          <p class="promo-price">${escapeHtml(PROMO_BANNER.price)}</p>
-          <div class="store-buttons">
-            <a class="store-btn" href="${PROMO_BANNER.iosUrl}" target="_blank" rel="noopener sponsored">
-              <img class="store-badge" src="../assets/badge-app-store.svg" alt="App Store からダウンロード" />
-            </a>
-            <a class="store-btn" href="${PROMO_BANNER.androidUrl}" target="_blank" rel="noopener sponsored">
-              <img class="store-badge" src="../assets/badge-google-play.svg" alt="Google Play で手に入れよう" />
-            </a>
-          </div>
+        <div class="store-buttons">
+          <a class="store-btn" href="${PROMO_BANNER.iosUrl}" target="_blank" rel="noopener sponsored">
+            <img class="store-badge" src="../assets/badge-app-store.svg" alt="App Store からダウンロード" />
+          </a>
+          <a class="store-btn" href="${PROMO_BANNER.androidUrl}" target="_blank" rel="noopener sponsored">
+            <img class="store-badge" src="../assets/badge-google-play.svg" alt="Google Play で手に入れよう" />
+          </a>
         </div>
       </aside>`;
 }

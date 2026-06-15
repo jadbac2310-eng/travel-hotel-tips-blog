@@ -233,15 +233,16 @@ a:hover {
   font-size: 0.82rem;
 }
 
-/* ===== 自社アプリ 紹介カード（1番目と2番目の間） ===== */
-.promo-card {
+/* ===== 自社アプリ シンプルバナー（画像＋ストアバッジのみ） ===== */
+.promo-simple {
   position: relative;
   display: block;
+  margin: 4px 0;
   background: var(--panel);
-  border: 1px solid var(--sand);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: 0 10px 28px rgba(255, 179, 71, 0.22);
+  box-shadow: var(--shadow);
 }
 .promo-tag {
   position: absolute;
@@ -261,68 +262,13 @@ a:hover {
   width: 100%;
   height: auto;
 }
-.promo-body {
-  padding: 22px;
-}
-.promo-title {
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin: 0 0 10px;
-  color: var(--coral);
-}
-.promo-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-.promo-meta .tag {
-  font-size: 0.74rem;
-  font-weight: 700;
-  padding: 4px 12px;
-  border-radius: 999px;
-  background: #fff3e6;
-  color: #c25a36;
-  border: 1px solid #ffd9bf;
-}
-.promo-description {
-  margin: 0 0 16px;
-}
-.promo-points-title {
-  margin: 0 0 8px;
-  font-weight: 700;
-  color: var(--coral);
-  font-size: 0.95rem;
-}
-.promo-points {
-  margin: 0 0 16px;
-  padding: 0;
-  list-style: none;
-}
-.promo-points li {
-  position: relative;
-  padding-left: 24px;
-  margin-bottom: 6px;
-  color: var(--text-muted);
-}
-.promo-points li::before {
-  content: "▶";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--sand);
-  font-size: 0.8rem;
-}
-.promo-price {
-  margin: 0 0 18px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
 .store-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
+  justify-content: center;
+  padding: 14px;
 }
 .store-btn {
   display: inline-flex;
