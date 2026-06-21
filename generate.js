@@ -25,7 +25,7 @@ const SITEMAP_PATH = path.join(__dirname, "sitemap.xml");
 
 // 公開サイトの絶対URL（OGP・canonical・sitemap で使用。末尾スラッシュなし）
 // 独自ドメインやリポジトリ名に合わせてここを書き換える。
-const SITE_URL = "https://jadbac2310-eng.github.io/travel-hotel-tips-blog";
+const SITE_URL = "https://tabi-hotel.com";
 const SITE_NAME = "旅とホテルのお役立ちガイド";
 
 // 自社アプリのプロモ（記事内 1番目と2番目の間に挿入） ※ゲームブログと共通バナー
