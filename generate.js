@@ -43,9 +43,8 @@ const PROMO_BANNER = {
     "キャラの組み合わせは自由自在！自分だけの編成でキャラメイク",
     "全国のプレイヤーとリアルタイム対戦も楽しめる",
   ],
-  androidUrl:
-    "https://play.google.com/store/apps/details?id=com.ignm.bokuneko.jp",
-  iosUrl: "https://apps.apple.com/jp/app/id1262986572",
+  androidUrl: "https://app.adjust.com/21imrv6r",
+  iosUrl: "https://app.adjust.com/21imrv6r",
 };
 
 // ---- ユーティリティ ----
