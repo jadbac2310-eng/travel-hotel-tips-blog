@@ -61,6 +61,22 @@ function escapeHtml(str = "") {
     .replace(/'/g, "&#39;");
 }
 
+// web_search を使うと Claude の応答本文に <cite index="1-2">…</cite> の引用マーカーが
+// 混入することがある。そのまま escapeHtml に渡すと記事にタグが文字列として表示されるため、
+// JSON をパースした直後に全フィールドから取り除く。
+function stripCitations(value) {
+  if (typeof value === "string") {
+    return value.replace(/<\/?cite\b[^>]*>/gi, "").trim();
+  }
+  if (Array.isArray(value)) return value.map(stripCitations);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([k, v]) => [k, stripCitations(v)])
+    );
+  }
+  return value;
+}
+
 function toMetaDescription(str = "", max = 120) {
   const flat = String(str).replace(/\s+/g, " ").trim();
   return flat.length > max ? flat.slice(0, max - 1) + "…" : flat;
@@ -180,6 +196,7 @@ ${usedList}
     );
     article = await structureArticle(anthropic, text);
   }
+  article = stripCitations(article);
   article.date = article.date || date;
   return article;
 }
@@ -568,4 +585,4 @@ if (isDirectRun) {
   });
 }
 
-export { buildArticleHtml, buildJsonLd, buildPromoCard, writeSitemap, writeRobots, toMetaDescription };
+export { buildArticleHtml, buildJsonLd, buildPromoCard, writeSitemap, writeRobots, toMetaDescription, stripCitations };
