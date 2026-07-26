@@ -30,7 +30,7 @@ const SITE_NAME = "旅とホテルのお役立ちガイド";
 
 // 自社アプリのプロモ（記事内 1番目と2番目の間に挿入） ※ゲームブログと共通バナー
 const PROMO_BANNER = {
-  image: "../assets/banner-bokuneko.jpg",
+  image: "../assets/banner-bokuneko.webp",
   title: "ぼくとネコ",
   alt: "ヤバかわ！がちんこRPG「ぼくとネコ」",
   genre: "ヤバかわ！がちんこRPG",
