@@ -1,7 +1,7 @@
 {
   "name": "travel-hotel-tips-blog",
   "version": "1.0.0",
-  "description": "Claude API と OpenAI API を使って毎日「旅行・ホテルのお役立ち情報5選」を自動生成するブログ",
+  "description": "Claude API と OpenAI API を使って毎週「旅行・ホテルのお役立ち情報5選」を自動生成するブログ",
   "type": "module",
   "main": "generate.js",
   "scripts": {

@@ -1,6 +1,6 @@
 # 旅とホテルのお役立ちガイド
 
-Claude API（記事生成）と OpenAI API（画像生成）を使って、**毎日自動で「旅行・ホテルのお役立ち情報5選」記事を生成**する静的ブログです。GitHub Actions により日本時間の毎朝6時に記事が追加されます。
+Claude API（記事生成）と OpenAI API（画像生成）を使って、**毎週自動で「旅行・ホテルのお役立ち情報5選」記事を生成**する静的ブログです。GitHub Actions により毎週月曜の日本時間6時に記事が追加されます。
 
 > 姉妹プロジェクト「[ゲームおすすめブログ](https://github.com/jadbac2310-eng/top5-game-recommend-blog)」と同じ仕組みで、**API キーも共通**で使えます。
 
@@ -62,7 +62,7 @@ GitHub Actions で自動実行するには、**このリポジトリにも** Sec
 
 また `Settings > Actions > General > Workflow permissions` を **Read and write permissions** にしてください（記事の自動コミットに必要）。
 
-登録後、`.github/workflows/daily-post.yml` が毎日 **日本時間 6:00（UTC 21:00）** に実行され、生成した記事を自動コミット＆プッシュします。`Actions` タブから手動実行（`Run workflow`）も可能です。
+登録後、`.github/workflows/daily-post.yml` が毎週月曜 **日本時間 6:00（日曜 UTC 21:00）** に実行され、生成した記事を自動コミット＆プッシュします。`Actions` タブから手動実行（`Run workflow`）も可能です。
 
 ## ライセンス
 
